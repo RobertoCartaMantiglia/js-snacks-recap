@@ -32,11 +32,12 @@ createApp({
     },
     autoMessage(){
         let newAutoMessage = {
-            message: axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
+            text: axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
             .then( (response) =>{
                 console.log(response.data.response); 
+                
             }),       
-            status: 'received',
+            status: 'received',            
         }        
         this.messages.push(newAutoMessage);
         
