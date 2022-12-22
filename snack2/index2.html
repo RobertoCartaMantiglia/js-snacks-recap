@@ -8,9 +8,10 @@
     <title>snack1</title>
 </head>
 <body>
-    <div id="app">{{ message }}
+    <div id="app">
        <div>
-        <input type="text" v-model="userName">inserisci il tuo nome
+        <input type="text" v-model="userName">
+        <button>inserisci il tuo nome</button>
         <ul>
             <li v-for="name in names">{{name}}</li>
         </ul>
