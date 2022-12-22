@@ -7,7 +7,6 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      message: 'Hello Vue!',
       randomNumber: 'null',
       oddNumbers: [],
       evenNumbers: [],
@@ -18,8 +17,10 @@ createApp({
         axios.get('https://flynn.boolean.careers/exercises/api/random/int ')
             .then( (response) =>{
                 console.log(response.data.response);
-                if(this.randomNumber % 2 === 0){
-                    
+                if(response.data.response % 2 === 0){
+                    this.evenNumbers.push(response.data.response);
+                }else{
+                  this.oddNumbers.push(response.data.response);
                 }
             });
      }

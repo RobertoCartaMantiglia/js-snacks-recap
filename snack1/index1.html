@@ -8,12 +8,13 @@
     <title>snack1</title>
 </head>
 <body>
-    <div id="app">{{ message }}
-       <div>
-        <input type="text" v-model="userName">inserisci il tuo nome
-        <ul>
-            <li v-for="name in names">{{name}}</li>
-        </ul>
+    <div id="app">
+        <button @click="getNewRandomNumber(number)">aggiungi numeri</button>
+       <div v-for="number in oddNumbers" class="odd">
+        {{number}}
+       </div>
+       <div v-for="number in evenNumbers" class="even">
+        {{number}}
        </div>
     </div>
    
