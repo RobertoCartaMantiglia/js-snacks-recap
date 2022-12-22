@@ -9,18 +9,17 @@
 </head>
 <body>
     <div id="app">{{ message }}
-        <div class="pari">
-
-        </div>
-        <div class="dispari">
-            
-        </div>   
-
+       <div>
+        <ul>
+            <li v-for="name in names">{{name}}</li>
+        </ul>
+       </div>
     </div>
    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="./script2.js"></script>
 </body>
 </html>
