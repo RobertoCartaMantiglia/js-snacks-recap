@@ -12,6 +12,7 @@ createApp({
       message: 'Hello Vue!',
       names: [],
       userName: '',
+      isNameInList: false,
     }
   },
   methods: {
@@ -23,6 +24,9 @@ createApp({
                 this.names.push(response.data.response);
             });
         }
+     },
+     checkList(userName){
+       this.isNameInList = this.names.includes(userName);
      }
   },
   created (){
