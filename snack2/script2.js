@@ -26,7 +26,12 @@ createApp({
         }
      },
      checkList(userName){
-       this.isNameInList = this.names.includes(userName);
+      //  this.isNameInList = this.names.includes(userName);
+       if(this.names.includes(userName)){
+        alert("benvenuto alla festa")
+        }else{
+          alert("vattene barbone")
+        }
      }
   },
   created (){
