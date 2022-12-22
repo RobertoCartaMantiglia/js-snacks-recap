@@ -27,12 +27,22 @@ createApp({
         }else{
             alert("scrivi qualcosa");
         }
-    }
+
+        setTimeout(this.autoMessage, 1000);
+    },
+    autoMessage(){
+        let newAutoMessage = {
+            message: axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
+            .then( (response) =>{
+                console.log(response.data.response); 
+            }),       
+            status: 'received',
+        }        
+        this.messages.push(newAutoMessage);
+        
+    },
   }
 }).mount('#app')
 
 
-axios.get('https://flynn.boolean.careers/exercises/api/random/name')
-.then( (response) =>{
-    console.log(response.data.response);     
-});
+ 
