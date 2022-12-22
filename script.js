@@ -9,13 +9,19 @@ createApp({
     return {
       message: 'Hello Vue!',
       randomNumber: 'null',
+      oddNumbers: [],
+      evenNumbers: [],
     }
   },
-  created (){
-    axios.get('https://flynn.boolean.careers/exercises/api/random/int ')
+  methods: {
+     getNewRandomNumber(){
+        axios.get('https://flynn.boolean.careers/exercises/api/random/int ')
             .then( (response) =>{
-                this.randomNumber = response.data;
-                console.log(response)
+                console.log(response.data.response);
+                if(this.randomNumber % 2 === 0){
+                    
+                }
             });
+     }
   }
 }).mount('#app')
