@@ -10,15 +10,18 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
+        <div class="container mt-4">
             <div class="row">
                 <div class="col-12 messages-area">
-
+                    <div v-for="message in messages"
+                        :class="(message.status === 'sent') ? 'sent': 'received' " >
+                        {{message.text}}
+                    </div>
                 </div>
-                <div class="col-12 align-center bg-danger">
+                <div class="col-12 align-center bg-secondary">
                     <div class="form-floating  w-75 m-auto">
-                        <textarea class="form-control" ></textarea>
-                        <label for="floatingTextarea" placeholder="Leave a comment here"></label>
+                        <input type="text" placeholder="Scrivi un messaggio" class="text-area w-100" v-model="userTextMessage"
+                            @keyup.enter="createNewMessage(userTextMessage)">
                     </div>
                 </div>
             </div>

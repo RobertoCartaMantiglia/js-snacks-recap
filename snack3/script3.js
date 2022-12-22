@@ -8,15 +8,31 @@
 createApp({
   data() {
     return {
-      message: 'Hello Vue!',
+      userTextMessage: '',
+      activeIndex: 0,
+      messages: [
+       
+    ],
     }
   },
   methods: {
-     getNewRandomName(){
-        axios.get('https://flynn.boolean.careers/exercises/api/random/name')
-            .then( (response) =>{
-                console.log(response.data.response);     
-            });
-     },
+    createNewMessage(){
+        let newMessage = {
+            text: this.userTextMessage,
+            status: 'sent',
+        }
+        if(newMessage.text != ''){
+            this.messages.push(newMessage); 
+            this.userTextMessage = '';          
+        }else{
+            alert("scrivi qualcosa");
+        }
+    }
   }
 }).mount('#app')
+
+
+axios.get('https://flynn.boolean.careers/exercises/api/random/name')
+.then( (response) =>{
+    console.log(response.data.response);     
+});
