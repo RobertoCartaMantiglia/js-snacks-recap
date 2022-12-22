@@ -1,6 +1,10 @@
-.odd{
-    color: red;
+.sent{
+    background-color: cyan;
 }
-.even{
-    color: green;
+.received{
+    background-color: darkorange;
+}
+.messages-area{
+    height: 450px;
+    border: 1px solid black;
 }
