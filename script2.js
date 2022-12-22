@@ -11,6 +11,7 @@ createApp({
     return {
       message: 'Hello Vue!',
       names: [],
+      userName: '',
     }
   },
   methods: {
@@ -18,8 +19,7 @@ createApp({
         for(let i=0; i<10; i++){
             axios.get('https://flynn.boolean.careers/exercises/api/random/name')
             .then( (response) =>{
-                console.log(response.data.response);
-                
+                console.log(response.data.response);                
                 this.names.push(response.data.response);
             });
         }

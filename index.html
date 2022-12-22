@@ -10,7 +10,7 @@
 <body>
     <div id="app">{{ message }}
        <div>
-        <input type="text">inserisci il tuo nome
+        <input type="text" v-model="userName">inserisci il tuo nome
         <ul>
             <li v-for="name in names">{{name}}</li>
         </ul>
