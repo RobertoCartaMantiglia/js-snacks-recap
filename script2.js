@@ -18,7 +18,7 @@ createApp({
         for(let i=0; i<10; i++){
             axios.get('https://flynn.boolean.careers/exercises/api/random/name')
             .then( (response) =>{
-                console.log(response.data);
+                console.log(response.data.response);
                 let name = response.data.response;
                 this.names.push(this.name);
             });
@@ -26,6 +26,6 @@ createApp({
      }
   },
   created (){
-    this.getNewRandomName;
+    this.getNewRandomName();
   }
 }).mount('#app')
