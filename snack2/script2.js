@@ -9,32 +9,31 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      message: 'Hello Vue!',
+
       names: [],
       userName: '',
       isNameInList: false,
     }
   },
   methods: {
-     getNewRandomName(){
-        for(let i=0; i<10; i++){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/name')
-            .then( (response) =>{
-                console.log(response.data.response);                
-                this.names.push(response.data.response);
-            });
-        }
-     },
-     checkList(userName){
+    getNewRandomName() {
+      for (let i = 0; i < 10; i++) {
+        axios.get('https://flynn.boolean.careers/exercises/api/random/name')
+          .then((response) => {
+            console.log(response.data.response);
+            this.names.push(response.data.response);
+          });
+      }
+    },
+    checkList(userName) {
       //  this.isNameInList = this.names.includes(userName);
-       if(this.names.includes(userName)){
-        alert("benvenuto alla festa")
-        }else{
-          alert("vattene barbone")
-        }
-     }
+      if (this.names.includes(this.userName)) {
+        this.isNameInList = true;
+
+      }
+    }
   },
-  created (){
+  created() {
     this.getNewRandomName();
   }
 }).mount('#app')
