@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,19 @@
     <link rel="stylesheet" href="./style.css">
     <title>snack4</title>
 </head>
+
 <body>
     <div id="app">
-       
+        <input type="text" placeholder="quanti numeri vuoi?" v-model="userNumber" @keyup.enter="newArray(userNumber)">
+        <h2>La somma è {{sum}}</h2>
 
-        
     </div>
-   
 
-    
+
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
     <script src="./script4.js"></script>
 </body>
+
 </html>
